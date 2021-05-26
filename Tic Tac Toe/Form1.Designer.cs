@@ -180,7 +180,7 @@ namespace Tic_Tac_Toe
             // 
             this.p1Win.AutoSize = true;
             this.p1Win.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.p1Win.Location = new System.Drawing.Point(235, 61);
+            this.p1Win.Location = new System.Drawing.Point(227, 61);
             this.p1Win.Name = "p1Win";
             this.p1Win.Size = new System.Drawing.Size(21, 24);
             this.p1Win.TabIndex = 3;
@@ -190,7 +190,7 @@ namespace Tic_Tac_Toe
             // 
             this.p2Win.AutoSize = true;
             this.p2Win.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.p2Win.Location = new System.Drawing.Point(499, 60);
+            this.p2Win.Location = new System.Drawing.Point(493, 59);
             this.p2Win.Name = "p2Win";
             this.p2Win.Size = new System.Drawing.Size(21, 24);
             this.p2Win.TabIndex = 3;
@@ -200,17 +200,17 @@ namespace Tic_Tac_Toe
             // 
             this.turnLbl.AutoSize = true;
             this.turnLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.turnLbl.Location = new System.Drawing.Point(124, 126);
+            this.turnLbl.Location = new System.Drawing.Point(184, 125);
             this.turnLbl.Name = "turnLbl";
-            this.turnLbl.Size = new System.Drawing.Size(185, 24);
+            this.turnLbl.Size = new System.Drawing.Size(103, 24);
             this.turnLbl.TabIndex = 1;
-            this.turnLbl.Text = "Player Turn Count:";
+            this.turnLbl.Text = "Turns left:";
             // 
             // turnCountLbl
             // 
             this.turnCountLbl.AutoSize = true;
             this.turnCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.turnCountLbl.Location = new System.Drawing.Point(308, 127);
+            this.turnCountLbl.Location = new System.Drawing.Point(283, 126);
             this.turnCountLbl.Name = "turnCountLbl";
             this.turnCountLbl.Size = new System.Drawing.Size(21, 24);
             this.turnCountLbl.TabIndex = 3;
