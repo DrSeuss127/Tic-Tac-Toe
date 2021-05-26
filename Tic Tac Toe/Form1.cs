@@ -15,7 +15,7 @@ namespace Tic_Tac_Toe
 
         //Variables for the players' turns, the number of turns left, and the counter for p1 and p2 scores
         bool playerTurn = true;
-        int playerTurnCount = 0;
+        int playerTurnCount = 9;
         int p1WinCount = 0;
         int p2WinCount = 0;
 
@@ -39,7 +39,7 @@ namespace Tic_Tac_Toe
 
             playerTurn = !playerTurn;                       //Negates playerTurn
             b.Enabled = false;                              //Disables the button once a player has clicked
-            playerTurnCount++;                              //Increments players' number of turns left whenever a button is clicked
+            playerTurnCount--;                              //Increments players' number of turns left whenever a button is clicked
             turnCountLbl.Text = playerTurnCount.ToString(); //Writes the number of turns to the target label
 
 
@@ -105,7 +105,7 @@ namespace Tic_Tac_Toe
 
 
                 //Clears the output for number of turns
-                turnCountLbl.Text = "0";                
+                turnCountLbl.Text = "9";                
 
 
                 //Determines which of the two players won and increments their score by 1
@@ -153,7 +153,7 @@ namespace Tic_Tac_Toe
                 else
                 {
                     playerTurn = true;                  //Resets whose turn it is
-                    playerTurnCount = 0;                //Resets number of turns left
+                    playerTurnCount = 9;                //Resets number of turns left
 
                     p1WinCount ++;
                     winner = "X";
@@ -194,14 +194,14 @@ namespace Tic_Tac_Toe
             }
             else
             {
-                if (playerTurnCount == 9)               //Checks if the number of turns is equal to 9. If it is, shows a message box and resets the buttons
+                if (playerTurnCount == 0)               //Checks if the number of turns is equal to 9. If it is, shows a message box and resets the buttons
                 {
                     MessageBox.Show("There is no winner. Resetting the grid..");
 
                     playerTurn = true;                  //Resets whose turn it is
-                    playerTurnCount = 0;                //Resets the number of turns
+                    playerTurnCount = 9;                //Resets the number of turns
 
-                    turnCountLbl.Text = "0";            //Clears the output for number of turns
+                    turnCountLbl.Text = "9";            //Clears the output for number of turns
 
                     button1.Text = "";
                     button1.Enabled = true;
@@ -239,8 +239,8 @@ namespace Tic_Tac_Toe
             //Resets the table; empties the button texts and enables the buttons
 
             playerTurn = true;          //Resets whose turn it is
-            playerTurnCount = 0;        //Resets the number of turns
-            turnCountLbl.Text = "0";    //Clears the output for number of turns
+            playerTurnCount = 9;        //Resets the number of turns
+            turnCountLbl.Text = "9";    //Clears the output for number of turns
 
             button1.Text = "";
             button1.Enabled = true;

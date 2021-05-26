@@ -214,7 +214,7 @@ namespace Tic_Tac_Toe
             this.turnCountLbl.Name = "turnCountLbl";
             this.turnCountLbl.Size = new System.Drawing.Size(21, 24);
             this.turnCountLbl.TabIndex = 3;
-            this.turnCountLbl.Text = "0";
+            this.turnCountLbl.Text = "9";
             // 
             // resetBtn
             // 
