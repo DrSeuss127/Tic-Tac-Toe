@@ -39,7 +39,7 @@ namespace Tic_Tac_Toe
 
             playerTurn = !playerTurn;                       //Negates playerTurn
             b.Enabled = false;                              //Disables the button once a player has clicked
-            playerTurnCount--;                              //Increments players' number of turns left whenever a button is clicked
+            playerTurnCount--;                              //Decrements players' number of turns left whenever a button is clicked
             turnCountLbl.Text = playerTurnCount.ToString(); //Writes the number of turns to the target label
 
 
@@ -112,7 +112,7 @@ namespace Tic_Tac_Toe
                 if (playerTurn)
                 {
                     playerTurn = true;                  //Resets whose turn it is
-                    playerTurnCount = 0;                //Resets the number of turns left
+                    playerTurnCount = 9;                //Resets the number of turns left
 
                     p2WinCount ++;
                     winner = "O";
