@@ -38,9 +38,11 @@ namespace Tic_Tac_Toe
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.p1Label = new System.Windows.Forms.Label();
+            this.p2Label = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.p1Win = new System.Windows.Forms.Label();
+            this.p2Win = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -133,25 +135,25 @@ namespace Tic_Tac_Toe
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button_click);
             // 
-            // label1
+            // p1Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(47, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Player 1 (X) Wins :";
+            this.p1Label.AutoSize = true;
+            this.p1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.p1Label.Location = new System.Drawing.Point(47, 59);
+            this.p1Label.Name = "p1Label";
+            this.p1Label.Size = new System.Drawing.Size(184, 24);
+            this.p1Label.TabIndex = 1;
+            this.p1Label.Text = "Player 1 (X) Wins :";
             // 
-            // label2
+            // p2Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(313, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Player 2 (O) Wins :";
+            this.p2Label.AutoSize = true;
+            this.p2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.p2Label.Location = new System.Drawing.Point(313, 59);
+            this.p2Label.Name = "p2Label";
+            this.p2Label.Size = new System.Drawing.Size(185, 24);
+            this.p2Label.TabIndex = 1;
+            this.p2Label.Text = "Player 2 (O) Wins :";
             // 
             // resetBtn
             // 
@@ -163,14 +165,36 @@ namespace Tic_Tac_Toe
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
+            // p1Win
+            // 
+            this.p1Win.AutoSize = true;
+            this.p1Win.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.p1Win.Location = new System.Drawing.Point(237, 59);
+            this.p1Win.Name = "p1Win";
+            this.p1Win.Size = new System.Drawing.Size(21, 24);
+            this.p1Win.TabIndex = 3;
+            this.p1Win.Text = "0";
+            // 
+            // p2Win
+            // 
+            this.p2Win.AutoSize = true;
+            this.p2Win.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.p2Win.Location = new System.Drawing.Point(504, 59);
+            this.p2Win.Name = "p2Win";
+            this.p2Win.Size = new System.Drawing.Size(21, 24);
+            this.p2Win.TabIndex = 3;
+            this.p2Win.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 652);
+            this.Controls.Add(this.p2Win);
+            this.Controls.Add(this.p1Win);
             this.Controls.Add(this.resetBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.p2Label);
+            this.Controls.Add(this.p1Label);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -198,9 +222,11 @@ namespace Tic_Tac_Toe
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label p1Label;
+        private System.Windows.Forms.Label p2Label;
         private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.Label p1Win;
+        private System.Windows.Forms.Label p2Win;
     }
 }
 
