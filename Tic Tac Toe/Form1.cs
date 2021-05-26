@@ -28,6 +28,8 @@ namespace Tic_Tac_Toe
         {
             Button b = (Button)sender;                      //Declares variable b as button and converts the object "sender" to a button
 
+            //Checks if playerTurn is true, if true, player1 (X) will click, if false, player2 (O) will click
+
             if (playerTurn)                                 //playerTurn is true by default, !playerturn negates it
             {
                 b.Text = "X";
@@ -43,9 +45,12 @@ namespace Tic_Tac_Toe
             turnCountLbl.Text = playerTurnCount.ToString(); //Writes the number of turns to the target label
 
 
-            //Checks every possible combination of the same 3 characters in the tic tac toe grid and if first button is disabled to avoid message box showing earlier than expected
+            //Boolean variable for winner checking
             bool thereIsAWinner = false;
 
+
+            //Checks every possible combination of the same 3 characters in the tic tac toe grid and if first button is disabled to avoid message box showing earlier than expected
+            
             //Horizontal Checking -------
             if ((button1.Text == button4.Text) && (button4.Text == button7.Text) && (!button1.Enabled)) 
             {
@@ -163,7 +168,7 @@ namespace Tic_Tac_Toe
                     MessageBox.Show("Player 1 (" + winner + ") wins!");
 
 
-                    //Resets all buttons and enables them again after a winner is identified
+                    //Resets all buttons and enables them if no winner is identified
                     button1.Text = "";
                     button1.Enabled = true;
 
@@ -192,45 +197,44 @@ namespace Tic_Tac_Toe
                     button9.Enabled = true;
                 }
             }
-            else
+            else if (playerTurnCount == 0)       //Checks if the number of turns left is equal to 0. If it is, shows a message box and resets the buttons
             {
-                if (playerTurnCount == 0)               //Checks if the number of turns is equal to 9. If it is, shows a message box and resets the buttons
-                {
-                    MessageBox.Show("There is no winner. Resetting the grid..");
+                
+             MessageBox.Show("There is no winner. Resetting the grid..");
 
-                    playerTurn = true;                  //Resets whose turn it is
-                    playerTurnCount = 9;                //Resets the number of turns
+             playerTurn = true;                  //Resets whose turn it is
+             playerTurnCount = 9;                //Resets the number of turns
 
-                    turnCountLbl.Text = "9";            //Clears the output for number of turns
+             turnCountLbl.Text = "9";            //Clears the output for number of turns
 
-                    button1.Text = "";
-                    button1.Enabled = true;
+             button1.Text = "";
+             button1.Enabled = true;
 
-                    button2.Text = "";
-                    button2.Enabled = true;
+             button2.Text = "";
+             button2.Enabled = true;
 
-                    button3.Text = "";
-                    button3.Enabled = true;
+             button3.Text = "";
+             button3.Enabled = true;
 
-                    button4.Text = "";
-                    button4.Enabled = true;
+             button4.Text = "";
+             button4.Enabled = true;
 
-                    button5.Text = "";
-                    button5.Enabled = true;
+             button5.Text = "";
+             button5.Enabled = true;
 
-                    button6.Text = "";
-                    button6.Enabled = true;
+             button6.Text = "";
+             button6.Enabled = true;
 
                     button7.Text = "";
-                    button7.Enabled = true;
+             button7.Enabled = true;
 
-                    button8.Text = "";
-                    button8.Enabled = true;
+             button8.Text = "";
+             button8.Enabled = true;
 
-                    button9.Text = "";
-                    button9.Enabled = true;
+             button9.Text = "";
+             button9.Enabled = true;
 
-                }
+                
             }
         }
 
@@ -286,6 +290,7 @@ namespace Tic_Tac_Toe
 
             Button b = (Button)sender;  
 
+            //If a button is enabled and the mouse hovers over the button, determines which player's turn is it, then displays the symbol (X or O)
             if (b.Enabled)
             {
                 if (playerTurn)
@@ -303,6 +308,7 @@ namespace Tic_Tac_Toe
         {
             Button b = (Button)sender;
 
+            //If a button is enabled, and the mouse leaves the button, clears the text
             if (b.Enabled)
             {
                 b.Text = "";
