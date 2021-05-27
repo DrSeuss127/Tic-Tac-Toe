@@ -13,3 +13,18 @@ E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Prog
 E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TTC\Tic Tac Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.dll
 E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TTC\Tic Tac Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.pdb
 E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TTC\Tic Tac Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.genruntimeconfig.cache
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\bin\Debug\netcoreapp3.1\Tic Tac Toe.exe
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\bin\Debug\netcoreapp3.1\Tic Tac Toe.deps.json
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\bin\Debug\netcoreapp3.1\Tic Tac Toe.runtimeconfig.json
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\bin\Debug\netcoreapp3.1\Tic Tac Toe.runtimeconfig.dev.json
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\bin\Debug\netcoreapp3.1\Tic Tac Toe.dll
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\bin\Debug\netcoreapp3.1\Tic Tac Toe.pdb
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.csprojAssemblyReference.cache
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic_Tac_Toe.Form1.resources
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.csproj.GenerateResource.cache
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.AssemblyInfoInputs.cache
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.AssemblyInfo.cs
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.csproj.CoreCompileInputs.cache
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.dll
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.pdb
+E:\Clint's Files\College\PUP\BSCOE 1st Year\Second Semester\Object-Oriented Programming\C# Repos and Projects\TicTacToe\TicTacToe\Tic-Tac-Toe\Tic Tac Toe\obj\Debug\netcoreapp3.1\Tic Tac Toe.genruntimeconfig.cache
