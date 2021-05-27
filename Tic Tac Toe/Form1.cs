@@ -225,7 +225,7 @@ namespace Tic_Tac_Toe
              button6.Text = "";
              button6.Enabled = true;
 
-                    button7.Text = "";
+             button7.Text = "";
              button7.Enabled = true;
 
              button8.Text = "";

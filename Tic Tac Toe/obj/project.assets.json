@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Clint's Files\\College\\PUP\\BSCOE 1st Year\\Second Semester\\Object-Oriented Programming\\C# Repos and Projects\\TTC\\Tic Tac Toe\\Tic Tac Toe\\Tic Tac Toe.csproj",
+      "projectUniqueName": "E:\\Clint's Files\\College\\PUP\\BSCOE 1st Year\\Second Semester\\Object-Oriented Programming\\C# Repos and Projects\\TicTacToe\\TicTacToe\\Tic-Tac-Toe\\Tic Tac Toe\\Tic Tac Toe.csproj",
       "projectName": "Tic Tac Toe",
-      "projectPath": "E:\\Clint's Files\\College\\PUP\\BSCOE 1st Year\\Second Semester\\Object-Oriented Programming\\C# Repos and Projects\\TTC\\Tic Tac Toe\\Tic Tac Toe\\Tic Tac Toe.csproj",
+      "projectPath": "E:\\Clint's Files\\College\\PUP\\BSCOE 1st Year\\Second Semester\\Object-Oriented Programming\\C# Repos and Projects\\TicTacToe\\TicTacToe\\Tic-Tac-Toe\\Tic Tac Toe\\Tic Tac Toe.csproj",
       "packagesPath": "C:\\Users\\clint\\.nuget\\packages\\",
-      "outputPath": "E:\\Clint's Files\\College\\PUP\\BSCOE 1st Year\\Second Semester\\Object-Oriented Programming\\C# Repos and Projects\\TTC\\Tic Tac Toe\\Tic Tac Toe\\obj\\",
+      "outputPath": "E:\\Clint's Files\\College\\PUP\\BSCOE 1st Year\\Second Semester\\Object-Oriented Programming\\C# Repos and Projects\\TicTacToe\\TicTacToe\\Tic-Tac-Toe\\Tic Tac Toe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\clint\\AppData\\Roaming\\NuGet\\NuGet.Config",
