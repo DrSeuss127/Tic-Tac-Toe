@@ -19,6 +19,7 @@ namespace Tic_Tac_Toe
         int p1WinCount = 0;
         int p2WinCount = 0;
 
+        //Method for checking the player turn and displaying it
         void turnIndicator() 
         {
             if (playerTurn)
@@ -37,16 +38,21 @@ namespace Tic_Tac_Toe
             turnIndicator();
         }
 
-        private void button_click(object sender, EventArgs e) //Single event handler for all tic-tac-toe-grid buttons
+        private void Form1_Load(object sender, EventArgs e)
         {
-            Button b = (Button)sender;                      //Declares variable b as button and converts the object "sender" to a button
+
+        }
+
+        private void button_click(object sender, EventArgs e)   //Single event handler for all tic-tac-toe-grid buttons
+        {
+            Button b = (Button)sender;                          //Declares variable b as button and converts the object "sender" to a button
 
             //Checks if playerTurn is true, if true, player1 (X) will click, if false, player2 (O) will click
 
-            if (playerTurn)                                 //playerTurn is true by default, !playerturn negates it (switches value of playerTurn)
+            if (playerTurn)                                     //playerTurn is true by default, !playerturn negates it (switches value of playerTurn)
             {
                 b.Text = "X";
-                playerTurn = !playerTurn;                   //Switch for true and false playerTurn
+                playerTurn = !playerTurn;                       //Switch for true and false playerTurn
             }
             else
             {
@@ -56,17 +62,17 @@ namespace Tic_Tac_Toe
 
             turnIndicator();
                                   
-            b.Enabled = false;                              //Disables the button once a player has clicked
-            playerTurnCount--;                              //Decrements players' number of turns left whenever a button is clicked
-            turnCountLbl.Text = playerTurnCount.ToString(); //Writes the number of turns to the target label
+            b.Enabled = false;                                  //Disables the button once a player has clicked
+            playerTurnCount--;                                  //Decrements players' number of turns left whenever a button is clicked
+            turnCountLbl.Text = playerTurnCount.ToString();     //Writes the number of turns to the target label
 
 
-            //Boolean variable for winner checking
-            bool thereIsAWinner = false;
+            
+            bool thereIsAWinner = false;                        //Boolean variable for winner checking
 
 
             //Checks every possible combination of the same 3 characters in the tic tac toe grid and if first button is disabled to avoid message box showing earlier than expected
-            
+
             //Horizontal Checking -------
             if ((button1.Text == button4.Text) && (button4.Text == button7.Text) && (!button1.Enabled)) 
             {
@@ -111,8 +117,8 @@ namespace Tic_Tac_Toe
             if (thereIsAWinner)
             {
 
-                //Checks who's turn it is and displays it 
-                turnIndicator();
+                
+                turnIndicator();    //Checks who's turn it is and displays it 
 
                 //Disables all the buttons once there is a winner
                 button1.Enabled = false;
@@ -312,6 +318,11 @@ namespace Tic_Tac_Toe
             p2Win.Text = "0";
         }
 
+        private void exitGameBtn_Click(object sender, MouseEventArgs e)  //Event handler for the "Exit Game" button
+        {
+            this.Close();
+        }
+
         private void mouseEnter(object sender, EventArgs e)             //Event handler for determining whose turn it is when hovering over the button
         {
 
@@ -340,16 +351,6 @@ namespace Tic_Tac_Toe
             {
                 b.Text = "";
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exitGameBtn_Click(object sender, MouseEventArgs e)
-        {
-            this.Close();
         }
     }
 }
