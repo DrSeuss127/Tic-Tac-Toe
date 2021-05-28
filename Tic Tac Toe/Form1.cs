@@ -19,9 +19,22 @@ namespace Tic_Tac_Toe
         int p1WinCount = 0;
         int p2WinCount = 0;
 
+        void turnIndicator() 
+        {
+            if (playerTurn)
+            {
+                turnInd.Text = "X's turn!";
+            }
+            else
+            {
+                turnInd.Text = "O's turn!";
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
+            turnIndicator();
         }
 
         private void button_click(object sender, EventArgs e) //Single event handler for all tic-tac-toe-grid buttons
@@ -30,16 +43,19 @@ namespace Tic_Tac_Toe
 
             //Checks if playerTurn is true, if true, player1 (X) will click, if false, player2 (O) will click
 
-            if (playerTurn)                                 //playerTurn is true by default, !playerturn negates it
+            if (playerTurn)                                 //playerTurn is true by default, !playerturn negates it (switches value of playerTurn)
             {
                 b.Text = "X";
+                playerTurn = !playerTurn;                   //Switch for true and false playerTurn
             }
             else
             {
                 b.Text = "O";
+                playerTurn = !playerTurn;
             }
 
-            playerTurn = !playerTurn;                       //Negates playerTurn
+            turnIndicator();
+                                  
             b.Enabled = false;                              //Disables the button once a player has clicked
             playerTurnCount--;                              //Decrements players' number of turns left whenever a button is clicked
             turnCountLbl.Text = playerTurnCount.ToString(); //Writes the number of turns to the target label
@@ -94,6 +110,10 @@ namespace Tic_Tac_Toe
 
             if (thereIsAWinner)
             {
+
+                //Checks who's turn it is and displays it 
+                turnIndicator();
+
                 //Disables all the buttons once there is a winner
                 button1.Enabled = false;
                 button2.Enabled = false;
@@ -116,8 +136,11 @@ namespace Tic_Tac_Toe
                 //Determines which of the two players won and increments their score by 1
                 if (playerTurn)
                 {
-                    playerTurn = true;                  //Resets whose turn it is
+                    playerTurn = true;                  //Resets whose turn it is (X by default)
                     playerTurnCount = 9;                //Resets the number of turns left
+
+                    
+                    turnIndicator();                    //Checks who's turn it is and displays it 
 
                     p2WinCount ++;
                     winner = "O";
@@ -157,8 +180,10 @@ namespace Tic_Tac_Toe
                 }
                 else
                 {
-                    playerTurn = true;                  //Resets whose turn it is
+                    playerTurn = true;                  //Resets whose turn it is (X by default)
                     playerTurnCount = 9;                //Resets number of turns left
+
+                    turnIndicator();                    //Checks who's turn it is and displays it 
 
                     p1WinCount ++;
                     winner = "X";
@@ -200,39 +225,41 @@ namespace Tic_Tac_Toe
             else if (playerTurnCount == 0)       //Checks if the number of turns left is equal to 0. If it is, shows a message box and resets the buttons
             {
                 
-             MessageBox.Show("There is no winner. Resetting the grid..");
+                 MessageBox.Show("There is no winner. Resetting the grid..");
 
-             playerTurn = true;                  //Resets whose turn it is
-             playerTurnCount = 9;                //Resets the number of turns
+                 playerTurn = true;                  //Resets whose turn it is (X by default)
+                 playerTurnCount = 9;                //Resets the number of turns
+             
+                 turnIndicator();                    //Checks who's turn it is and displays it 
 
-             turnCountLbl.Text = "9";            //Clears the output for number of turns
+                 turnCountLbl.Text = "9";            //Clears the output for number of turns
 
-             button1.Text = "";
-             button1.Enabled = true;
+                 button1.Text = "";
+                 button1.Enabled = true;
 
-             button2.Text = "";
-             button2.Enabled = true;
+                 button2.Text = "";
+                 button2.Enabled = true;
 
-             button3.Text = "";
-             button3.Enabled = true;
+                 button3.Text = "";
+                 button3.Enabled = true;
 
-             button4.Text = "";
-             button4.Enabled = true;
+                 button4.Text = "";
+                 button4.Enabled = true;
 
-             button5.Text = "";
-             button5.Enabled = true;
+                 button5.Text = "";
+                 button5.Enabled = true;
 
-             button6.Text = "";
-             button6.Enabled = true;
+                 button6.Text = "";
+                 button6.Enabled = true;
 
-             button7.Text = "";
-             button7.Enabled = true;
+                 button7.Text = "";
+                 button7.Enabled = true;
 
-             button8.Text = "";
-             button8.Enabled = true;
+                 button8.Text = "";
+                 button8.Enabled = true;
 
-             button9.Text = "";
-             button9.Enabled = true;
+                 button9.Text = "";
+                 button9.Enabled = true;
 
                 
             }
@@ -313,6 +340,16 @@ namespace Tic_Tac_Toe
             {
                 b.Text = "";
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitGameBtn_Click(object sender, MouseEventArgs e)
+        {
+            this.Close();
         }
     }
 }
