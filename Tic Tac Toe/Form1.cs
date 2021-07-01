@@ -19,8 +19,8 @@ namespace Tic_Tac_Toe
         int p1WinCount = 0;
         int p2WinCount = 0;
 
-        //Method for checking the player turn and displaying it
-        void turnIndicator()
+        //---------------------------Start of Game Mechanics methods---------------------------
+        private void turnIndicator()
         {
             if (playerTurn)
             {
@@ -89,10 +89,10 @@ namespace Tic_Tac_Toe
             {
                 turnIndicator();    //Checks who's turn it is and displays it 
 
-                buttonsDisable();
+                buttonsDisable();   //Disables all buttons
 
                 //Stores the string value of the winner (X or O)
-                string winner = "";
+                string winner;
 
 
                 //Clears the output for number of turns
@@ -141,7 +141,6 @@ namespace Tic_Tac_Toe
         {
             if (playerTurnCount == 0)       //Checks if the number of turns left is equal to 0. If it is, shows a message box and resets the buttons
             {
-
                 MessageBox.Show("There is no winner. Resetting the grid..");
 
                 playerTurn = true;                  //Resets whose turn it is (X by default)
@@ -154,7 +153,12 @@ namespace Tic_Tac_Toe
                 buttonsReset();
             }
         }
+        //---------------------------End of Game Mechanics methods---------------------------
 
+
+
+
+        //---------------------------Start of Button methods---------------------------
         private void buttonsReset()
         {
             //Resets all buttons and enables them again after a winner is identified
@@ -199,7 +203,11 @@ namespace Tic_Tac_Toe
             button8.Enabled = false;
             button9.Enabled = false;
         }
+        //---------------------------End of Button methods---------------------------
 
+
+
+        //---------------------------Main code---------------------------
         public Form1()
         {
             InitializeComponent();
@@ -227,15 +235,12 @@ namespace Tic_Tac_Toe
                 b.Text = "O";
                 playerTurn = !playerTurn;
             }
-
-            turnIndicator();
-                                  
             b.Enabled = false;                                  //Disables the button once a player has clicked
             playerTurnCount--;                                  //Decrements players' number of turns left whenever a button is clicked
             turnCountLbl.Text = playerTurnCount.ToString();     //Writes the number of turns to the target label
 
+            turnIndicator();
             winnerChecker();
-
             drawChecker();
         }
 
