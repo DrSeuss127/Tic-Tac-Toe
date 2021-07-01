@@ -20,7 +20,7 @@ namespace Tic_Tac_Toe
         int p2WinCount = 0;
 
         //Method for checking the player turn and displaying it
-        void turnIndicator() 
+        void turnIndicator()
         {
             if (playerTurn)
             {
@@ -30,6 +30,174 @@ namespace Tic_Tac_Toe
             {
                 turnInd.Text = "O's turn!";
             }
+        }
+
+        private void winnerChecker()
+        {
+            bool thereIsAWinner = false;                        //Boolean variable for winner checking
+
+
+            //Checks every possible combination of the same 3 characters in the tic tac toe grid and if first button is disabled to avoid message box showing earlier than expected
+
+            //Horizontal Checking -------
+            if ((button1.Text == button4.Text) && (button4.Text == button7.Text) && (!button1.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+            else if ((button2.Text == button5.Text) && (button5.Text == button8.Text) && (!button2.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+            else if ((button3.Text == button6.Text) && (button6.Text == button9.Text) && (!button3.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+
+            //Vertical Checking ||||||||
+            else if ((button1.Text == button2.Text) && (button2.Text == button3.Text) && (!button1.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+            else if ((button4.Text == button5.Text) && (button5.Text == button6.Text) && (!button4.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+            else if ((button7.Text == button8.Text) && (button8.Text == button9.Text) && (!button7.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+
+            //Diagonal Checking \\\\////
+            else if ((button1.Text == button5.Text) && (button5.Text == button9.Text) && (!button1.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+            else if ((button7.Text == button5.Text) && (button5.Text == button3.Text) && (!button7.Enabled))
+            {
+                thereIsAWinner = true;
+            }
+
+
+            if (thereIsAWinner)
+            {
+                turnIndicator();    //Checks who's turn it is and displays it 
+
+                buttonsDisable();
+
+                //Stores the string value of the winner (X or O)
+                string winner = "";
+
+
+                //Clears the output for number of turns
+                turnCountLbl.Text = "9";
+
+
+                //Determines which of the two players won and increments their score by 1
+                if (playerTurn)
+                {
+                    playerTurn = true;                  //Resets whose turn it is (X by default)
+                    playerTurnCount = 9;                //Resets the number of turns left
+
+
+                    turnIndicator();                    //Checks who's turn it is and displays it 
+
+                    p2WinCount++;
+                    winner = "O";
+                    p2Win.Text = "";
+                    p2Win.Text = p2WinCount.ToString();
+
+                    MessageBox.Show("Player 2 (" + winner + ") wins!");
+
+                    buttonsReset();
+                }
+                else
+                {
+                    playerTurn = true;                  //Resets whose turn it is (X by default)
+                    playerTurnCount = 9;                //Resets number of turns left
+
+                    turnIndicator();                    //Checks who's turn it is and displays it 
+
+                    p1WinCount++;
+                    winner = "X";
+                    p1Win.Text = "";
+                    p1Win.Text = p1WinCount.ToString();
+
+                    MessageBox.Show("Player 1 (" + winner + ") wins!");
+
+
+                    buttonsReset();
+                }
+            }
+        }
+
+        private void drawChecker()
+        {
+            if (playerTurnCount == 0)       //Checks if the number of turns left is equal to 0. If it is, shows a message box and resets the buttons
+            {
+
+                MessageBox.Show("There is no winner. Resetting the grid..");
+
+                playerTurn = true;                  //Resets whose turn it is (X by default)
+                playerTurnCount = 9;                //Resets the number of turns
+
+                turnIndicator();                    //Checks who's turn it is and displays it 
+
+                turnCountLbl.Text = "9";            //Clears the output for number of turns
+
+                buttonsReset();
+            }
+        }
+
+        private void buttonsReset()
+        {
+            //Resets all buttons and enables them again after a winner is identified
+            button1.Text = "";
+            button1.Enabled = true;
+
+            button2.Text = "";
+            button2.Enabled = true;
+
+            button3.Text = "";
+            button3.Enabled = true;
+
+            button4.Text = "";
+            button4.Enabled = true;
+
+            button5.Text = "";
+            button5.Enabled = true;
+
+            button6.Text = "";
+            button6.Enabled = true;
+
+            button7.Text = "";
+            button7.Enabled = true;
+
+            button8.Text = "";
+            button8.Enabled = true;
+
+            button9.Text = "";
+            button9.Enabled = true;
+        }
+
+        private void buttonsDisable()
+        {
+            //Disables all the buttons once there is a winner
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
         }
 
         public Form1()
@@ -66,209 +234,9 @@ namespace Tic_Tac_Toe
             playerTurnCount--;                                  //Decrements players' number of turns left whenever a button is clicked
             turnCountLbl.Text = playerTurnCount.ToString();     //Writes the number of turns to the target label
 
+            winnerChecker();
 
-            
-            bool thereIsAWinner = false;                        //Boolean variable for winner checking
-
-
-            //Checks every possible combination of the same 3 characters in the tic tac toe grid and if first button is disabled to avoid message box showing earlier than expected
-
-            //Horizontal Checking -------
-            if ((button1.Text == button4.Text) && (button4.Text == button7.Text) && (!button1.Enabled)) 
-            {
-                thereIsAWinner = true;
-            }
-            else if ((button2.Text == button5.Text) && (button5.Text == button8.Text) && (!button2.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-            else if ((button3.Text == button6.Text) && (button6.Text == button9.Text) && (!button3.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-
-
-            //Vertical Checking ||||||||
-            else if ((button1.Text == button2.Text) && (button2.Text == button3.Text) && (!button1.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-            else if ((button4.Text == button5.Text) && (button5.Text == button6.Text) && (!button4.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-            else if ((button7.Text == button8.Text) && (button8.Text == button9.Text) && (!button7.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-
-
-            //Diagonal Checking \\\\////
-            else if ((button1.Text == button5.Text) && (button5.Text == button9.Text) && (!button1.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-            else if ((button7.Text == button5.Text) && (button5.Text == button3.Text) && (!button7.Enabled))
-            {
-                thereIsAWinner = true;
-            }
-
-
-            if (thereIsAWinner)
-            {
-
-                
-                turnIndicator();    //Checks who's turn it is and displays it 
-
-                //Disables all the buttons once there is a winner
-                button1.Enabled = false;
-                button2.Enabled = false;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                button5.Enabled = false;
-                button6.Enabled = false;
-                button7.Enabled = false;
-                button8.Enabled = false;
-                button9.Enabled = false;
-
-                //Stores the string value of the winner (X or O)
-                string winner = "";
-
-
-                //Clears the output for number of turns
-                turnCountLbl.Text = "9";                
-
-
-                //Determines which of the two players won and increments their score by 1
-                if (playerTurn)
-                {
-                    playerTurn = true;                  //Resets whose turn it is (X by default)
-                    playerTurnCount = 9;                //Resets the number of turns left
-
-                    
-                    turnIndicator();                    //Checks who's turn it is and displays it 
-
-                    p2WinCount ++;
-                    winner = "O";
-                    p2Win.Text = "";
-                    p2Win.Text = p2WinCount.ToString();
-
-                    MessageBox.Show("Player 2 (" + winner + ") wins!");
-
-                    //Resets all buttons and enables them again after a winner is identified
-                    button1.Text = "";
-                    button1.Enabled = true;
-
-                    button2.Text = "";
-                    button2.Enabled = true;
-
-                    button3.Text = "";
-                    button3.Enabled = true;
-
-                    button4.Text = "";
-                    button4.Enabled = true;
-
-                    button5.Text = "";
-                    button5.Enabled = true;
-
-                    button6.Text = "";
-                    button6.Enabled = true;
-
-                    button7.Text = "";
-                    button7.Enabled = true;
-
-                    button8.Text = "";
-                    button8.Enabled = true;
-
-                    button9.Text = "";
-                    button9.Enabled = true;
-
-                }
-                else
-                {
-                    playerTurn = true;                  //Resets whose turn it is (X by default)
-                    playerTurnCount = 9;                //Resets number of turns left
-
-                    turnIndicator();                    //Checks who's turn it is and displays it 
-
-                    p1WinCount ++;
-                    winner = "X";
-                    p1Win.Text = "";
-                    p1Win.Text = p1WinCount.ToString();
-
-                    MessageBox.Show("Player 1 (" + winner + ") wins!");
-
-
-                    //Resets all buttons and enables them if no winner is identified
-                    button1.Text = "";
-                    button1.Enabled = true;
-
-                    button2.Text = "";
-                    button2.Enabled = true;
-
-                    button3.Text = "";
-                    button3.Enabled = true;
-
-                    button4.Text = "";
-                    button4.Enabled = true;
-
-                    button5.Text = "";
-                    button5.Enabled = true;
-
-                    button6.Text = "";
-                    button6.Enabled = true;
-
-                    button7.Text = "";
-                    button7.Enabled = true;
-
-                    button8.Text = "";
-                    button8.Enabled = true;
-
-                    button9.Text = "";
-                    button9.Enabled = true;
-                }
-            }
-            else if (playerTurnCount == 0)       //Checks if the number of turns left is equal to 0. If it is, shows a message box and resets the buttons
-            {
-                
-                 MessageBox.Show("There is no winner. Resetting the grid..");
-
-                 playerTurn = true;                  //Resets whose turn it is (X by default)
-                 playerTurnCount = 9;                //Resets the number of turns
-             
-                 turnIndicator();                    //Checks who's turn it is and displays it 
-
-                 turnCountLbl.Text = "9";            //Clears the output for number of turns
-
-                 button1.Text = "";
-                 button1.Enabled = true;
-
-                 button2.Text = "";
-                 button2.Enabled = true;
-
-                 button3.Text = "";
-                 button3.Enabled = true;
-
-                 button4.Text = "";
-                 button4.Enabled = true;
-
-                 button5.Text = "";
-                 button5.Enabled = true;
-
-                 button6.Text = "";
-                 button6.Enabled = true;
-
-                 button7.Text = "";
-                 button7.Enabled = true;
-
-                 button8.Text = "";
-                 button8.Enabled = true;
-
-                 button9.Text = "";
-                 button9.Enabled = true;
-
-                
-            }
+            drawChecker();
         }
 
         private void resetBtn_Click(object sender, EventArgs e)             //Event handler for a manual reset grid button
@@ -279,32 +247,7 @@ namespace Tic_Tac_Toe
             playerTurnCount = 9;        //Resets the number of turns
             turnCountLbl.Text = "9";    //Clears the output for number of turns
 
-            button1.Text = "";
-            button1.Enabled = true;
-
-            button2.Text = "";
-            button2.Enabled = true;
-
-            button3.Text = "";
-            button3.Enabled = true;
-
-            button4.Text = "";
-            button4.Enabled = true;
-
-            button5.Text = "";
-            button5.Enabled = true;
-
-            button6.Text = "";
-            button6.Enabled = true;
-
-            button7.Text = "";
-            button7.Enabled = true;
-
-            button8.Text = "";
-            button8.Enabled = true;
-
-            button9.Text = "";
-            button9.Enabled = true;
+            buttonsReset();
         }
 
         private void resetScoreBtn_Click(object sender, EventArgs e)     //Event handler for a manual reset score button
